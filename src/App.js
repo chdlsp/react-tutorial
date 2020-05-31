@@ -38,36 +38,17 @@ function reducer(state, action) {
         }
       };
     case 'CREATE_USER':
-      // # immer 로 수정
-      // return {
-      //   inputs: initialState.inputs,
-      //   users: state.users.concat(action.user)
-      // };
 
       return produce(state, draft => {
         draft.users.push(action.user);
       });
     case 'TOGGLE_USER':
-      // # immer 로 수정
-      // return {
-      //   ...state,
-      //   users: state.users.map(user => 
-      //     user.id === action.id
-      //       ? { ...user, active: !user.active}
-      //       : user
-      //     )
-      // }
 
       return produce(state, draft => {
         const user = draft.users.find(user => user.id === action.id);
         user.active = !user.active;
       })
     case 'REMOVE_USER':
-      // # immer 로 수정
-      // return {
-      //   ...state,
-      //   users: state.users.filter(user => user.id !== action.id)
-      // }
 
       return produce(state, draft => {
         const index = draft.users.findIndex(user => user.id === action.id);
