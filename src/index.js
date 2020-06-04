@@ -5,13 +5,16 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import ContextSample from './ContextSample';
 import Counter from './Counter';
+import CreateUser from './CreateUser';
+import UserList from './UserList';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Counter />
+    {/* <Counter /> */}
     {/* <ContextSample /> */}
+    <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change
